@@ -27,6 +27,9 @@ for conf in conf_files:
     driver = get_network_driver('eos')
   elif conf[:2] == 'vmx':
     driver = get_network_driver('junos')
+  else:
+    print "ERROR: unsupported device type in conf file %s" % conf
+    sys.exit(1)
   
   device = driver(hostname, 'ntc', 'ntc123')
   device.open()
