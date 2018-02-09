@@ -8,6 +8,7 @@
       - name: ENSURE FILES ARE ON REMOTE DEVICES
         ntc_file_copy:
           local_file=../CONFIGS/{{ inventory_hostname }}.conf
+          remote_file=/var/tmp/{{ inventory_hostname }}.conf
           platform={{ net_platform }}
           host={{ inventory_hostname }}
           username={{ un }}
