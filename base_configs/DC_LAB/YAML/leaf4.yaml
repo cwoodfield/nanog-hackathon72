@@ -6,11 +6,11 @@ interfaces:
   ip6_addr: 2001:db8:0:2:10:64:2:7/127
 - name: Ethernet2
   description: Ethernet4:eos-spine2
-  ip4_addr: 10.16.2.71/31
+  ip4_addr: 10.64.2.71/31
   ip6_addr: 2001:db8:0:2:10:64:2:71/127
 - name: Ethernet3
   description: Ethernet4:eos-spine3
-  ip4_addr: 10.16.2.135/31
+  ip4_addr: 10.64.2.135/31
   ip6_addr: 2001:db8:0:2:10:64:2:135/127
 - name: Ethernet4
   description: Ethernet4:eos-spine4
