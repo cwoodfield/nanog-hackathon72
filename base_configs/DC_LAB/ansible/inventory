@@ -1,0 +1,16 @@
+[all:vars]
+un=ntc
+pwd=ntc123
+
+[eos]
+eos-spine1
+eos-spine2
+eos-spine3
+eos-spine4
+eos-leaf1
+eos-leaf2
+eos-leaf3
+eos-leaf4
+
+[eos:vars]
+net_platform=arista_eos_eapi
