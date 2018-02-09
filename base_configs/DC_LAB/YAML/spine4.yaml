@@ -18,10 +18,11 @@ interfaces:
   ip6_addr: 2001:db8:0:2:10:64:2:198/127
 lo_ip4_addr: 10.64.1.4/32
 lo_ip6_addr: 2001:db8::4/128
-mgmt_addr: 10.0.0.11
+mgmt_addr: 10.0.0.14
 bgp_asn: 65001
 bgp_ip4_aggregate: 10.64.0.0/16
 bgp_ip6_aggregate: 2001:db8::/32
+leaf_peers:
 - description: eos-leaf1
   asn: 65011
   ip4_peer_addr: 10.16.2.193
@@ -34,7 +35,7 @@ bgp_ip6_aggregate: 2001:db8::/32
   asn: 65013
   ip4_peer_addr: 10.16.2.197
   ip6_peer_addr: 2001:db8:0:2:10:64:2:197
-- description: eos-leaf2
+- description: eos-leaf4
   asn: 65014
   ip4_peer_addr: 10.16.2.199
   ip6_peer_addr: 2001:db8:0:2:10:64:2:199

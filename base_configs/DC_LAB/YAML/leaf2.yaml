@@ -18,7 +18,7 @@ interfaces:
   ip6_addr: 2001:db8:0:2:10:64:2:195/127
 lo_ip4_addr: 10.64.1.2/32
 lo_ip6_addr: 2001:db8:0:1::2/128
-mgmt_addr: 10.0.0.21
+mgmt_addr: 10.0.0.22
 bgp_asn: 65012
 spine_asn: 65001
 spine_peers:
