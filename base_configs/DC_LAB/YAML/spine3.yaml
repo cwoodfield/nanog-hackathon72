@@ -1,4 +1,4 @@
-hostname: eos-spine1
+hostname: eos-spine3
 interfaces:
 - name: Ethernet1
   description: Ethernet3:eos-leaf1
@@ -25,18 +25,18 @@ bgp_ip6_aggregate: 2001:db8::/32
 leaf_peers:
 - description: eos-leaf1
   asn: 65011
-  ip4_peer_addr: 10.16.2.129
+  ip4_peer_addr: 10.64.2.129
   ip6_peer_addr: 2001:db8:0:2:10:64:2:129
 - description: eos-leaf2
   asn: 65012
-  ip4_peer_addr: 10.16.2.131
+  ip4_peer_addr: 10.64.2.131
   ip6_peer_addr: 2001:db8:0:2:10:64:2:131
 - description: eos-leaf3
   asn: 65013
-  ip4_peer_addr: 10.16.2.133
+  ip4_peer_addr: 10.64.2.133
   ip6_peer_addr: 2001:db8:0:2:10:64:2:133
 - description: eos-leaf4
   asn: 65014
-  ip4_peer_addr: 10.16.2.135
+  ip4_peer_addr: 10.64.2.135
   ip6_peer_addr: 2001:db8:0:2:10:64:2:135
 
