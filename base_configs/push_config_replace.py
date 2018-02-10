@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
 
+import napalm_base
 from napalm import get_network_driver
 import os
 import sys
@@ -21,23 +22,26 @@ for c in conf_files:
   print "  %s" % c
 
 for conf in conf_files:
-  print "Applying config to %s..." % conf
-  hostname = conf.replace('.conf', '')
-  if conf[:3] == 'eos-':
-    driver = get_network_driver('eos')
-  elif conf[:2] == 'vmx':
-    driver = get_network_driver('junos')
-  else:
-    print "ERROR: unsupported device type in conf file %s" % conf
-    sys.exit(1)
+  try:
+    print "Applying config to %s..." % conf
+    hostname = conf.replace('.conf', '')
+    if conf[:4] == 'eos-':
+      driver = get_network_driver('eos')
+    elif conf[:3] == 'vmx':
+      driver = get_network_driver('junos')
+    else:
+      print "Ignoring file %s - invalid type" % conf
   
-  device = driver(hostname, 'ntc', 'ntc123')
-  device.open()
+    device = driver(hostname, 'ntc', 'ntc123')
+    device.open()
 
-  device.load_replace_candidate(filename='../CONFIGS/%s' % conf)
+    device.load_replace_candidate(filename='%s/%s' % (conf_path, conf))
 
-  print "--- DIFF ---"
-  print device.compare_config()
-  device.commit_config()
+    print "--- DIFF ---"
+    print device.compare_config()
+    device.commit_config()
 
-  device.close()
+    device.close()
+  except napalm_base.exceptions.ConnectionException as e:
+    print "Failed to connect to host %s: %s" % (conf, e)
+  
