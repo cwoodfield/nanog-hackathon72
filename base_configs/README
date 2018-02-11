@@ -1,18 +1,15 @@
 Configs for lab environment are expressed as templates (in TEMPLATES dir) that call data from per-device YAML files.
 Generated configs are present in the CONFIGS directory.
 
-If an update to a YAML file is needed, rerun the config generator like so:
+If an update to a config file is needed, cd to the lab directory and run gen_config.sh. This will render configs for all of the lab devices (except for the interface config files on the Ubuntu hosts in the large lab).
 
-./template_gen.py TEMPLATES/$template_file YAML/$yaml_file > CONFIGS > $device.conf
+To push new configs to all lab routers, run "push_config_replace.py <LAB_DIR_NAME>" from the base_configs 
+directory.
 
-To apply configurations to lab devices (and override existing configuration, first scp the configuration file
-to the device. copying the file to /var/tmp works fine for both JunOS and EOS.
-
+MANUAL CONFIG PUSH INSTRUCTIONS
+-------------------------------
 To be safe, it's a good idea to double-check the fxp0/Management1 IP addresses and default gateways to make sure they
 match the applied configs (if it changes, you'll lock yourself out when you apply the new config).
-
-INSTRUCTIONS
-------------
 
 JunOS VMX devices: run the following commands from exec mode:
 
