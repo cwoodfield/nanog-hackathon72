@@ -1,0 +1,30 @@
+hostname: vmx1
+bgp_asn: 65000
+interfaces:
+- name: ge-0/0/0
+  description: ge-0-0-0:vmx3
+  ip4_addr: 10.1.0.0/31
+  ip6_addr: 2001:db8::10:1:0:0/127
+  apply_groups: 
+  - BB-INT-BASE
+- name: ge-0/0/2
+  description: ge-0-0-2:vmx2
+  ip4_addr: 10.1.2.0/31
+  ip6_addr: 2001:db8::10:1:2:0/127
+  apply_groups:
+  - BB-INT-BASE
+fxp0_addr: 10.0.0.31/24
+default_gateway: 10.0.0.2
+lo_ip4_addr: 10.255.0.1
+lo_ip6_addr: 2001:db8::10:255:0:1
+lo_iso_addr: 49.0001.0102.5500.0001.00
+ibgp_peers:
+- description: vmx2
+  ip4_addr: 10.255.0.2
+  ip6_addr: 2001:db8::10:255:0:2
+- description: vmx3
+  ip4_addr: 10.255.0.3
+  ip6_addr: 2001:db8::10:255:0:3
+isis_interfaces:
+- ge-0/0/0.0
+- ge-0/0/2.0
