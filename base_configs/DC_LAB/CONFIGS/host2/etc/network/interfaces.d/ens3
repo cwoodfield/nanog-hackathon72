@@ -1,0 +1,12 @@
+auto ens3
+iface ens3 inet static
+  address 10.64.5.100
+  netmask 255.255.255.0
+  network 10.64.5.0
+  broadcast 10.64.5.255
+
+iface ens3 inet6 static
+  address 2001:db8:64:5::100/64
+  gateway 2001:db8:64:5::1/64
+
+up route add -net 10.64.0.0 netmask 255.255.0.0 gw 10.64.5.1 dev ens3

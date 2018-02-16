@@ -16,6 +16,10 @@ interfaces:
   description: Ethernet3:eos-spine4
   ip4_addr: 10.64.2.197/31
   ip6_addr: 2001:db8:0:2:10:64:2:197/127
+- name: Ethernet5
+  description: ens3:host3
+  ip4_addr: 10.64.6.1/24
+  ip6_addr: 2001:db8:64:6::1/64
 lo_ip4_addr: 10.64.1.3/32
 lo_ip6_addr: 2001:db8:0:1::3/128
 mgmt_addr: 10.0.0.23
